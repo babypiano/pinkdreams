@@ -78,6 +78,7 @@ body {
     font-weight: 300;
     font-size: 35px;
     text-align: center;
+    font-weight: bold;
     color: #E2BB2B;
     margin-bottom: 30px;
 }
@@ -200,54 +201,62 @@ body {
     width: 40%;
 }
 
-footer {
+.footer {
     background: #a18cd1;
 }
 
-.form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.footer__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 20px;
+    align-items: center;
 }
 
-.input {
-    background: transparent;
-    border: 0;
+.footer__title {
+    font-weight: 400;
     color: #fff;
-    outline: none;
-    border: 1px solid #fff;
-    padding: 20px 10px;
-}
-
-.input::placeholder {
-    color: #fff;
-    font-family: 'Raleway', 'sans serif';
-}
-
-input[type="text"],
-input[type="email"] {
-    display: inline-block;
-    width: 49%;
+    font-size: 2rem;
     margin-bottom: 30px;
-}
-
-.form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    font-family: 'Raleway';
-}
-
-input[type="submit"]{
-    width: 120px;
     text-align: center;
-    padding: 14px 0;
+    padding-top: 20px;
 }
 
-input[type="submit"]:hover{
-    cursor: pointer;
-    color: tomato;
-    background: #fff;
+.footer__icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
 }
+
+.footer__container-icons {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    text-align: center;
+}
+
+.footer__icon {
+    color: inherit;
+    font-size: 40px;
+    text-decoration: none;
+    line-height: 60px;
+    transition: .3s ease;    
+}
+
+.footer__icon:hover{
+    cursor: pointer;
+    color: #E2BB2B;
+    transform: translateY(-.6px);
+}
+
+.fab.footer__icon {
+    line-height: 60px;
+}
+
+.fa.footer__icon {
+    line-height: 60px;
+}
+
 
 /* VIDEO */
 
@@ -391,8 +400,15 @@ input[type="submit"]:hover{
         width: 98%;
         margin-bottom: 20px;
     }
-    
 
+       /* Footer */
+       .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__contact {  /* Es util para desplazar elementos de lugar en la misma columna */
+        grid-row: 1/2;
+    }
     
 
     @media screen and(max-width:400px){
